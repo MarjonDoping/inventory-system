@@ -12,6 +12,8 @@ class siteController extends Controller
 {
     public function create(Request $request){
 		$data['site'] = new Site();
+        $data['page_title'] = 'owners';
+
 		if($request->post_id){
 			$id = $request->post_id;
 			$data['site'] = Site::where('id',$id)->first();
@@ -22,7 +24,8 @@ class siteController extends Controller
 
 	public function show(){
 		$data['sites'] = Site::paginate(500);
-		return view('admin.site.showsite',$data);
+        $data['page_title'] = 'owners';
+		return view('admin.site.showsite', $data);
 	}
 
 	public function store(Request $request){

@@ -164,6 +164,10 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'prod_name' => 'product',
+        'prod_price' => 'price',
+        'prod_image' => 'image'
+    ],
 
 ];

@@ -14,18 +14,19 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function fileUpload(Request $request,$image_key,$upload_path=""){
+    public function fileUpload(Request $request, $image_key, $upload_path = "")
+    {
         $fileName = "";
-        if($upload_path==""){
-            $upload_path=public_path("/uploads");
+        if ($upload_path == "") {
+            $upload_path = public_path("/uploads");
         }
-        
-        if ($request->hasFile($image_key)){
-            $rand = rand(10,100);
+
+        if ($request->hasFile($image_key)) {
+            $rand = rand(10, 100);
             $image = $request->file($image_key);
-            $fileName= $name = date('dmY').time().$rand.'.'.$image->getClientOriginalExtension();
+            $fileName = $name = date('dmY') . time() . $rand . '.' . $image->getClientOriginalExtension();
             $image->move($upload_path, $name);
-        }else{
+        } else {
             dd($request->file($image_key));
         }
         return $fileName;

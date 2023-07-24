@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Basecontroller;
 use App\Http\Controllers\Admincontroller;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Pagecontroller;
 use App\Http\Controllers\Postcontroller;
 use App\Http\Controllers\Contactcontrol;
@@ -11,7 +12,8 @@ use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\siteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerController;
-
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,10 @@ use App\Http\Controllers\CustomerController;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/a', function (){
+	echo "hello world";
 });
 
 Route::get('/home', [Basecontroller::class,'home']);
@@ -43,7 +49,7 @@ Route::post('/admin', [Admincontroller::class,'makeLogin']);
 
 
 // Route::group(['middleware' =>'auth:admin'],function(){
-Route::get('/dashboard', [Admincontroller::class,'dashboard']);
+Route::get('/dashboard', [Admincontroller::class,'dashboard'])->name('dashboard');
 
 Route::get('/page-add', [Pagecontroller::class,'AddPage'])->name('page-add');
 	Route::get('/company-page-add', [Pagecontroller::class,'company'])->name('company.page.add');
@@ -73,6 +79,35 @@ Route::get('/page-add', [Pagecontroller::class,'AddPage'])->name('page-add');
 	Route::post('/site-add/{post_id?}', [siteController::class,'store'])->name('site-store');
 	Route::post('/site-delete', [siteController::class,'delete'])->name('site-delete');
 	Route::get('/contact-show', [Contactcontrol::class,'show'])->name('admin.contact.show');
+
+	Route::get('/category', [CategoryController::class,'show'])->name('category-show');
+	Route::get('/category-add/', [CategoryController::class,'add'])->name('category-add');
+	Route::post('/category-add/{cat_id?}', [CategoryController::class,'create'])->name('category-create');
+	Route::get('/category-edit/{cat_id?}', [CategoryController::class,'edit'])->name('category-edit');
+	Route::post('/category-edit/{cat_id?}', [CategoryController::class,'create'])->name('category-save');
+	Route::post('/category-delete', [CategoryController::class,'delete'])->name('category-delete');
+
+	Route::get('/products', [ProductController::class,'show'])->name('products-show');
+	Route::get('/products-add/', [ProductController::class,'add'])->name('products-add');
+	Route::post('/products-add/{prod_id?}', [ProductController::class,'create'])->name('products-create');
+	Route::get('/products-edit/{prod_id?}', [ProductController::class,'edit'])->name('products-edit');
+	Route::post('/products-edit/{prod_id?}', [ProductController::class,'create'])->name('products-save');
+	Route::post('/products-delete', [ProductController::class,'delete'])->name('products-delete');
+
+	Route::get('/orders', [OrderController::class,'show'])->name('orders-show');
+	Route::get('/orders-add/{order_id}', [OrderController::class,'add'])->name('orders-add');
+	Route::post('/orders-add/{order_id}', [OrderController::class,'create'])->name('orders-create');
+	Route::get('/orders-delete-userorder/{userorder_id}', [OrderController::class,'deleteUserOrder'])->name('orders-delete-useorder');
+	Route::put('/orders-updateqty/{userorder_id}/{qty}', [OrderController::class,'updateqty'])->name('orders-updateqty-useorder');
+	Route::get('/orders-getsum/{order_id}', [OrderController::class,'getSum'])->name('orders-getsum-useorder');
+	Route::get('/orders-checkout/{order_id}', [OrderController::class,'checkout'])->name('orders-checkout-useorder');
+	Route::post('/orders-placeorder', [OrderController::class,'placeorder'])->name('orders-placeorder-useorder');
+	Route::get('/orders-view/{order_id}', [OrderController::class,'viewOrder'])->name('orders-vieworder');
+
+
+
+
+
 
 	Route::get('/register', [UserController::class,'register']);
 	Route::post('/register', [UserController::class,'registeruser'])->name('registeruser');

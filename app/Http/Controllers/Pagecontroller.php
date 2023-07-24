@@ -9,24 +9,33 @@ class Pagecontroller extends Controller
 {
     public function AddPage(Request $request){
         
-        $page = Page::where('page_title','home')->get();
-        $numrow = count($page);
+        $data['page'] = Page::where('page_title','home')->get();
+        $data['page_title'] = 'home';
+
+        $numrow = count($data['page']);
         if($numrow > 0 ){
-            return view('admin.home.addpage',['page'=>$page]);
+            return view('admin.home.addpage', $data);
         }else{
-            $page = new Page();
-            return view('admin.home.addpage',['page'=>$page]);
+            $data['page'] = new Page();
+            return view('admin.home.addpage', $data);
         }
     }
 
     public function company(Request $request){
-        $page = Page::where('page_title','our_company')->get();
-        return view('admin.company.ourCompany',['page'=>$page,'total_row'=>count($page)]);
+        $data['page'] = Page::where('page_title','our_company')->get();
+        $data['total_row'] = count($data['page']);
+        $data['page_title'] = 'about';
+
+        return view('admin.company.ourCompany', $data);
         
     }
     public function contact(Request $request){
-        $page = Page::where('page_title','contact')->get();
-        return view('admin.contact.ContactPost',['page'=>$page,'total_row'=>count($page)]);
+
+        $data['page'] = Page::where('page_title','contact')->get();
+        $data['total_row'] = count($data['page']);
+        $data['page_title'] = 'contact';
+
+        return view('admin.contact.ContactPost', $data);
         
     }
 
