@@ -12,6 +12,8 @@ class Contactcontrol extends Controller
 {
 		public function show(){
 			$data['contacts'] = Contact::paginate(500);
+			$data['page_title'] = 'messages';
+
 			return view('admin.contacts',$data);
 		}
     public function contact_store(Request $request)

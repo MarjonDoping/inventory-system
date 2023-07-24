@@ -62,7 +62,7 @@
 				</li>
 			</ul>
 
-		</main>
+</main>
 @endsection
 
 @push('footer-script')

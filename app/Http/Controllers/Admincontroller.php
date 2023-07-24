@@ -45,7 +45,8 @@ class Admincontroller extends Controller
     // }
   }
   public function dashboard(){      
-    return view('admin.dashboard');
+    $data['page_title'] = 'dashboard';
+    return view('admin.dashboard', $data);
   }
 
   
