@@ -28,7 +28,13 @@ li {
 	--yellow: #FFCE26;
 	--light-yellow: #FFF2C6;
 	--orange: #FD7238;
-	--light-orange: #FFE0D3;
+	--light-orange: #FFE0D3;	
+	--green: #009900;
+	--light-green: #80ff80;
+	--purple: #6600ff;
+	--light-purple: #b380ff;
+	--brown: #996633;
+	--light-brown: #dfbf9f;
 }
 
 html {
@@ -387,6 +393,10 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+
+
+
+
 #content main .box-info li:nth-child(1) .bx {
 	background: var(--light-blue);
 	color: var(--blue);
@@ -399,6 +409,21 @@ body {
 	background: var(--light-orange);
 	color: var(--orange);
 }
+
+#content main .box-info li:nth-child(4) .bx {
+	background: var(--light-green);
+	color: var(--green);
+}
+#content main .box-info li:nth-child(5) .bx {
+	background: var(--light-purple);
+	color: var(--purple);
+}
+#content main .box-info li:nth-child(6) .bx {
+	background: var(--light-brown);
+	color: var(--brown);
+}
+
+
 #content main .box-info li .text h3 {
 	font-size: 24px;
 	font-weight: 600;

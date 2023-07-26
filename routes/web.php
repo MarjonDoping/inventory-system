@@ -13,6 +13,7 @@ use App\Http\Controllers\siteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\pdfController;
 use App\Http\Controllers\ProductController;
 
 /*
