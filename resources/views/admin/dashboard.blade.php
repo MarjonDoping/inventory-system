@@ -1,6 +1,11 @@
 @extends('admin.layout')
 @section('content')
 
+    <script>
+        $(function() {
+            $('#transactionsTable').DataTable();
+        });
+    </script>
 
 	<style>
 		.chart {
@@ -8,7 +13,9 @@
           min-height: 500px;
         }
 	</style>
+
     <script type="text/javascript">
+
         google.charts.load('current', {
             'packages': ['corechart']
         });
@@ -52,6 +59,68 @@
 
             chart.draw(data, options);
         }
+    </script>
+
+    <script type="text/javascript">
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+        google.charts.setOnLoadCallback(drawAxisTickColors);
+
+        function drawAxisTickColors() {
+            var prod = google.visualization.arrayToDataTable([<?php 
+				for($i = 0; $i < count($prods); $i++){
+					echo "[";
+					for($j = 0; $j < count($prods[$i]); $j++){
+						
+						if($i != 0 && $j != 0){
+							echo $prods[$i][$j];
+						}else{
+							echo "'".$prods[$i][$j]."'";
+						}
+						if($j != count($prods[$i])-1){
+							echo ",";
+						}
+					}
+					echo "]";
+					if($i != count($prods)-1){
+						echo ",";
+					}
+				}
+			?>]);
+
+        var options = {
+            title: 'Number of Stocks',
+            chartArea: {width: '50%'},
+            hAxis: {
+            title: 'Stocks',
+            minValue: 0,
+            textStyle: {
+                bold: true,
+                fontSize: 14,
+                color: '#4d4d4d'
+            },
+            titleTextStyle: {
+                bold: true,
+                fontSize: 14,
+                color: '#4d4d4d'
+            }
+            },
+            vAxis: {
+            title: 'Products',
+            textStyle: {
+                fontSize: 14,
+                bold: true,
+                color: '#848484'
+            },
+            titleTextStyle: {
+                fontSize: 14,
+                bold: true,
+                color: '#848484'
+            }
+            }
+        };
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(prod, options);
+    }
     </script>
 
     <main>
@@ -122,6 +191,56 @@
             <div class="row">
                 <div class="col-xl-10 mx-auto">
                     <div class="chart" id="piechart"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <div class="col-xl-10 mx-auto">
+                    <div id="chart_div"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="my-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <h1>Transactions</h1>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="card p-3 shadow">
+                        <table id='transactionsTable' class='display' style='width:100%' class="table">
+                            <thead>
+                                <th>Transaction ID</th>
+                                <th>Customer Name</th>
+                                <th>Total Price</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </thead>
+                            <tbody>
+                                @foreach ($transactions as $transaction)
+                                    <tr>
+                                        <td>{{ $transaction->transaction_id }}</td>
+                                        <td>{{ $transaction->customer_name }}</td>
+                                        <td>{{ $transaction->totalprice }}</td>
+                                        <td>{{ $transaction->date }}</td>
+                                        <td>
+                                            <a href="{{ route('orders-vieworder', $transaction->order_id) }}"
+                                                class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
                 </div>
             </div>
         </div>

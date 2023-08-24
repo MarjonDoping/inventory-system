@@ -2,7 +2,7 @@
 @section('content')
     <main>
 
-        <div class="container"  >
+        <div class="container">
             <div class="row">
                 <div class="col-md-10 mx-auto" id="printableArea" >
                     <div class="container mt-5">
@@ -85,6 +85,7 @@
             document.getElementById('hideButtons').style.display = 'none';
 
 
+
             var printContents = document.getElementById(divName).innerHTML;
             var originalContents = document.body.innerHTML;
 
@@ -97,6 +98,7 @@
             document.body.innerHTML = originalContents;
 
             document.getElementById('hideButtons').style.display = '';
+
         }
     </script>
 

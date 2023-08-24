@@ -54,14 +54,24 @@ class Admincontroller extends Controller
   {
 
     $data['totalearnings'] = Transaction::sum('totalprice');
+    $data['transactions'] = Transaction::paginate(500);
+
     $data['totalorders'] = Transaction::count();
     $data['totalproducts'] = Product::count();
+
 
     $prod = [
       ['Product', 'Item sold']
     ];
 
+    $prod1 = [
+      ['Product', 'Stocks']
+    ];
+
     $products = Product::all();
+
+    $prods = Product::select('prod_name', 'stock')->join('categories', 'categories.cat_id', '=', 'products.cat_id')->get();
+
 
 
     foreach ($products as $product) {
@@ -73,9 +83,22 @@ class Admincontroller extends Controller
       array_push($prod, $newarr);
     }
 
+    foreach ($prods as $prod2) {
+
+      $newarr1[0] = $prod2->prod_name;
+      $newarr1[1] = $prod2->stock;
+
+      array_push($prod1, $newarr1);
+    }
+
     $data['products'] = $prod;
 
+    $data['prods'] = $prod1;
+
+
     $data['page_title'] = 'dashboard';
+
+
 
     return view('admin.dashboard', $data);
   }
