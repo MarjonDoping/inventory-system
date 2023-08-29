@@ -63,7 +63,7 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="{{ asset('home') }}">Home</a></li>
+                            <li><a href="{{ asset('home') }}" class="active">Home</a></li>
                             <li><a href="{{ asset('about') }}">About</a></li>
                             <li class="has-sub">
                                 <a href="javascript:void(0)">News</a>
@@ -132,100 +132,63 @@
     </section>
     <!-- ***** Main Banner Area End ***** -->
 
-    <section class="services">
-
+    <section class="our-courses" id="courses">
         <div class="container">
-
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="owl-service-item owl-carousel">
-
+                    <div class="section-heading">
+                        <h2>Best Products We Offer Here in Cleto's Bakeshop</h2>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="owl-courses-item owl-carousel">
                         <div class="item">
-                            <div class="icon">
-                                <img src=" {{ asset('homes/images/1.png') }}" alt="">
-                            </div>
+                            <img src=" {{ asset('homes/images/cake.png') }}" alt="Course One">
                             <div class="down-content">
-                                <h4>Excellence</h4>
-                                <p>
-                                    @if ($home)
-                                        @foreach ($home as $value)
-                                            @if ($value->section_title == 'first_carousel')
-                                                {{ $value->data }}
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                </p>
+                                <h4>Customize Cakes</h4>
+
                             </div>
                         </div>
-
                         <div class="item">
-                            <div class="icon">
-                                <img src=" {{ asset('homes/images/1.png') }}" alt="">
-                            </div>
+                            <img src="{{ asset('homes/images/cupcake.png') }}" alt="Course Two">
                             <div class="down-content">
-                                <h4>Artistry</h4>
-                                <p>
-                                    @if ($home)
-                                        @foreach ($home as $value)
-                                            @if ($value->section_title == 'second_carousel')
-                                                {{ $value->data }}
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                </p>
+                                <h4>Cupcakes</h4>
+
                             </div>
                         </div>
-
                         <div class="item">
-                            <div class="icon">
-                                <img src=" {{ asset('homes/images/1.png') }}" alt="">
-                            </div>
+                            <img src="{{ asset('homes/images/ensaymada.png') }}" alt="Course Two">
                             <div class="down-content">
-                                <h4>Freshness</h4>
-                                <p>
-                                    @if ($home)
-                                        @foreach ($home as $value)
-                                            @if ($value->section_title == 'third_carousel')
-                                                {{ $value->data }}
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                </p>
+                                <h4>Ensaymada</h4>
+
                             </div>
                         </div>
-
                         <div class="item">
-                            <div class="icon">
-                                <img src=" {{ asset('homes/images/1.png') }}" alt="">
-                            </div>
+                            <img src="{{ asset('homes/images/pandesal.png') }}" alt="Course Two">
                             <div class="down-content">
-                                <h4>Variety</h4>
-                                <p>
-                                    @if ($home)
-                                        @foreach ($home as $value)
-                                            @if ($value->section_title == 'fourth_carousel')
-                                                {{ $value->data }}
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                </p>
+                                <h4>Pandesal</h4>
+
                             </div>
                         </div>
+                        <div class="item">
+                            <img src="{{ asset('homes/images/sbread.png') }}" alt="Course Two">
+                            <div class="down-content">
+                                <h4>Spanish Bread</h4>
 
+                            </div>
+                        </div>
 
                     </div>
                 </div>
             </div>
+        </div>
+        </div>
         </div>
     </section>
 
 
     <section class="upcoming-meetings" id="meetings">
         <div class="container">
-
-
-            <br>
-            <br>
 
             <div class="row">
                 <div class="col-lg-12">
@@ -475,6 +438,8 @@
         </div>
     </section>
 
+
+
     <section class="apply-now" id="apply">
         <div class="container">
             <div class="row">
@@ -507,59 +472,93 @@
         </div>
     </section>
 
-    <section class="our-courses" id="courses">
+    <!-- <section class="services">
+
         <div class="container">
+
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-heading">
-                        <h2>Best Products We Offer Here in Cleto's Bakeshop</h2>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="owl-courses-item owl-carousel">
-                        <div class="item">
-                            <img src=" {{ asset('homes/images/cake.png') }}" alt="Course One">
-                            <div class="down-content">
-                                <h4>Customize Cakes</h4>
+                    <div class="owl-service-item owl-carousel">
 
+                        <div class="item">
+                            <div class="icon">
+                                <img src=" {{ asset('homes/images/1.png') }}" alt="">
+                            </div>
+                            <div class="down-content">
+                                <h4>Excellence</h4>
+                                <p>
+                                    @if ($home)
+                                        @foreach ($home as $value)
+                                            @if ($value->section_title == 'first_carousel')
+                                                {{ $value->data }}
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                </p>
                             </div>
                         </div>
-                        <div class="item">
-                            <img src="{{ asset('homes/images/cupcake.png') }}" alt="Course Two">
-                            <div class="down-content">
-                                <h4>Cupcakes</h4>
 
+                        <div class="item">
+                            <div class="icon">
+                                <img src=" {{ asset('homes/images/1.png') }}" alt="">
+                            </div>
+                            <div class="down-content">
+                                <h4>Artistry</h4>
+                                <p>
+                                    @if ($home)
+                                        @foreach ($home as $value)
+                                            @if ($value->section_title == 'second_carousel')
+                                                {{ $value->data }}
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                </p>
                             </div>
                         </div>
-                        <div class="item">
-                            <img src="{{ asset('homes/images/ensaymada.png') }}" alt="Course Two">
-                            <div class="down-content">
-                                <h4>Ensaymada</h4>
 
+                        <div class="item">
+                            <div class="icon">
+                                <img src=" {{ asset('homes/images/1.png') }}" alt="">
+                            </div>
+                            <div class="down-content">
+                                <h4>Freshness</h4>
+                                <p>
+                                    @if ($home)
+                                        @foreach ($home as $value)
+                                            @if ($value->section_title == 'third_carousel')
+                                                {{ $value->data }}
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                </p>
                             </div>
                         </div>
-                        <div class="item">
-                            <img src="{{ asset('homes/images/pandesal.png') }}" alt="Course Two">
-                            <div class="down-content">
-                                <h4>Pandesal</h4>
 
+                        <div class="item">
+                            <div class="icon">
+                                <img src=" {{ asset('homes/images/1.png') }}" alt="">
+                            </div>
+                            <div class="down-content">
+                                <h4>Variety</h4>
+                                <p>
+                                    @if ($home)
+                                        @foreach ($home as $value)
+                                            @if ($value->section_title == 'fourth_carousel')
+                                                {{ $value->data }}
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                </p>
                             </div>
                         </div>
-                        <div class="item">
-                            <img src="{{ asset('homes/images/sbread.png') }}" alt="Course Two">
-                            <div class="down-content">
-                                <h4>Spanish Bread</h4>
 
-                            </div>
-                        </div>
 
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-        </div>
-    </section>
+    </section> -->
+
 
     <section class="our-facts">
         <div class="container">
@@ -619,9 +618,63 @@
     </div> -->
     </section>
 
+    <footer class="bg-dark text-light p-5" >
 
-    <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
+<div class="footer-top">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-3 col-md-12 footer-info">
+      <img src=" {{asset('homes/images/cletoslogo.png')}}" alt="" height="150px" width="5px">
+      </div>
+
+      <div class="col-lg-3 col-6 footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-6 footer-links">
+        <h4>Our Services</h4>
+        <ul>
+          <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start text-light" style="color:white;">
+        <h4>Contact Us</h4>
+        <a>
+          Urdaneta City <br>
+          Pangasinan 2440<br>
+          Philippines<br><br>
+          <strong>Phone:</strong> +1 5589 55488 55<br>
+          <strong>Email:</strong> info@example.com<br>
+</a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container text-center pt-4">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Capstone</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+    Designed by Ryan Julian</a>
+  </div>
+</div>
+</footer>
+
     <script src=" {{ asset('homes/vendor/jquery/jquery.min.js') }}"></script>
     <script src=" {{ asset('homes/vendor/bootstrap/js/bootstrap.bundle.min.js ') }}"></script>
 

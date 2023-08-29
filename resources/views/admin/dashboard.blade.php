@@ -142,7 +142,7 @@
         </div>
 
         <ul class="box-info">
-            <li>
+            <!-- <li>
                 <i class='bx '> <i class="fa fa-pencil" aria-hidden="true"></i></i>
                 <span class="text">
 
@@ -161,7 +161,7 @@
 
                     <h6>You can now delete</h6>
                 </span>
-            </li>
+            </li> -->
             <li>
                 <i class='bx '> <i class="fa fa-money" aria-hidden="true"></i></i>
                 <span class="text">

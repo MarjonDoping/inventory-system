@@ -66,14 +66,14 @@
                       <li><a href="{{asset('home')}}">Home</a></li>
                           <li><a href="{{asset('about')}}">About</a></li>
                           <li class="has-sub">
-                              <a href="javascript:void(0)">News</a>
+                              <a href="javascript:void(0)" class="active">News</a>
                               <ul class="sub-menu">
                               <li><a href="{{asset('company')}}">Announcements</a></li>
-                              <li><a href="{{asset('details')}}">All Articles</a></li>
+                              <li><a href="{{asset('details')}} " >All Articles</a></li>
                               </ul>
                           </li>
                           <li class="has-sub">
-                              <a href="javascript:void(0)">Teams</a>
+                              <a href="javascript:void(0)" >Teams</a>
                               <ul class="sub-menu">
                                   <li><a href="{{asset('teams')}}">Shop Owners</a></li>
                                   <li><a href="{{asset('board')}}">System Programmers</a></li>
@@ -355,7 +355,7 @@
       </div>
     </div>
     <div class="footer">
-      <p>Marjon Doping. Project Developer. WST-3B</p>
+      <p>Project development</p>
          
     </div>
   </section>

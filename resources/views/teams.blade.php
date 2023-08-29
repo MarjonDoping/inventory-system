@@ -70,7 +70,7 @@
                               </ul>
                           </li>
                           <li class="has-sub">
-                              <a href="javascript:void(0)">Teams</a>
+                              <a href="javascript:void(0)" class="active">Teams</a>
                               <ul class="sub-menu">
                               <li><a href="{{asset('teams')}}">Shop Owners</a></li>
                                   <li><a href="{{asset('board')}}">System Programmers</a></li>

@@ -78,7 +78,7 @@
                                   <li><a href="{{asset('board')}}">System Programmers</a></li>
                               </ul>
                           </li>
-                          <li ><a href="{{asset('courses')}}">Products</a></li>  
+                          <li ><a href="{{asset('courses')}}" class="active">Products</a></li>  
                           <li ><a href="{{asset('contact')}}">Contact Us</a></li>  
                           <li > <a href="/admin"><i class="fa fa-user" aria-hidden="true"></i></a></li> 
                       </ul>        

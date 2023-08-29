@@ -87,7 +87,7 @@
                               </ul>
                           </li>
                           <li ><a href="{{asset('courses')}}">Products</a></li>  
-                          <li ><a href="{{asset('contact')}}">Contact Us</a></li>  
+                          <li ><a href="{{asset('contact')}}" class="active">Contact Us</a></li>  
                           <li > <a href="/admin"><i class="fa fa-user" aria-hidden="true"></i></a></li> 
                       </ul>        
                       <a class='menu-trigger'>

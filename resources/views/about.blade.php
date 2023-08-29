@@ -60,7 +60,7 @@
                       <!-- ***** Menu Start ***** -->
                      <ul class="nav">
                       <li><a href="{{asset('home')}}">Home</a></li>
-                          <li><a href="{{asset('about')}}">About</a></li>
+                          <li><a href="{{asset('about')}}" class="active">About</a></li>
                           <li class="has-sub">
                               <a href="javascript:void(0)">News</a>
                               <ul class="sub-menu">
