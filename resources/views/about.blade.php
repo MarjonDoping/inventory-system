@@ -37,8 +37,8 @@
         <div class="col-lg-4 col-sm-4">
           <div class="right-icons">
             <ul>
-            <li><a href="https://www.facebook.com/profile.php?id=100071402461224" target="_blank" ><i class="fa fa-facebook"></i></a></li>
-              <li><a href="https://www.facebook.com/profile.php?id=100071402461224" target="_blank"><i class="fa fa-google"></i></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100071402461224" target="_blank" ><i class="fa fa-facebook text-primary"></i></a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100071402461224" target="_blank"><i class="fa fa-google text-danger"></i></a></li>
             </ul>
           </div>
         </div>
@@ -206,6 +206,64 @@
     </div>
     
   </section>
+
+  <footer class="bg-dark text-light p-5" >
+
+<div class="footer-top">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-3 col-md-12 footer-info">
+      <img src=" {{asset('homes/images/cletoslogo.png')}}" alt="" height="150px" width="5px">
+      </div>
+
+      <div class="col-lg-3 col-6 footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('home') }}">Home</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('about') }}">About us</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('company') }}">News</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('teams') }}">Teams</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('courses') }}">Products</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('contact') }}">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-6 footer-links">
+        <h4>Our Services</h4>
+        <ul>
+          <li><i class="bi bi-chevron-right"></i> <a >Content Management</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a >Inventory Management</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a >Product Sales</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a >Marketing</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a >Web Design</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start text-light" style="color:white;">
+        <h4>Contact Us</h4>
+        <a>
+          Urdaneta City <br>
+          Pangasinan 2440<br>
+          Philippines<br><br>
+          <strong>Phone:</strong> +1 5589 55488 55<br>
+          <strong>Email:</strong> info@example.com<br>
+</a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container text-center pt-4">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Capstone</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+    Designed by Ryan Julian</a>
+  </div>
+</div>
+</footer>
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->

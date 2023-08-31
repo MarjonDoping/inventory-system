@@ -40,8 +40,8 @@
         <div class="col-lg-4 col-sm-4">
           <div class="right-icons">
             <ul>
-            <li><a href="https://www.facebook.com/profile.php?id=100071402461224" target="_blank" ><i class="fa fa-facebook"></i></a></li>
-              <li><a href="https://www.facebook.com/profile.php?id=100071402461224" target="_blank"><i class="fa fa-google"></i></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100071402461224" target="_blank" ><i class="fa fa-facebook text-primary"></i></a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100071402461224" target="_blank"><i class="fa fa-google text-danger"></i></a></li>
             </ul>
           </div>
         </div>
@@ -108,9 +108,9 @@
   <section class="meetings-page" id="meetings">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-6">
           <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-6">
               <div class="meeting-single-item">
                 <div class="thumb">
                   

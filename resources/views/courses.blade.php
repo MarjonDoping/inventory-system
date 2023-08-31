@@ -40,8 +40,8 @@
         <div class="col-lg-4 col-sm-4">
           <div class="right-icons">
             <ul>
-            <li><a href="https://www.facebook.com/profile.php?id=100071402461224" target="_blank" ><i class="fa fa-facebook"></i></a></li>
-              <li><a href="https://www.facebook.com/profile.php?id=100071402461224" target="_blank"><i class="fa fa-google"></i></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100071402461224" target="_blank" ><i class="fa fa-facebook text-primary"></i></a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100071402461224" target="_blank"><i class="fa fa-google text-danger"></i></a></li>
             </ul>
           </div>
         </div>
@@ -104,571 +104,127 @@
     </div>
   </section>
 
-  
-
-  <section class="meetings-page" id="meetings">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-12">
-        
-<br>
-    <div class="meeting-single-item">
-                <div class="thumb">
-                  
-                @foreach($post as $value)
+  <section class="p-5 meetings-page">
+  <div class="card-group">
+  <div class="card">
+  @foreach($post as $value)
                     @if($value->section_title=='course-1')       
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-              
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-               
-                </div>    
-      </div>
-    </div>
+    <img class="card-img-top" src="{{asset('uploads')}}/{{$value->image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{$value->title}}</h5>
     </div>
     @endif
      @endforeach
-    <br>
-   
-    
-    @foreach($post as $value)
-     @if($value->section_title=='course-2')  
-    <div class="meeting-single-item">
-                <div class="thumb"> 
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>               
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-                 
-                 <br>
-                 <br>
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-                </div>    
-      </div>
-    </div>
+  </div>
+  <div class="card">
+  @foreach($post as $value)
+     @if($value->section_title=='course-2') 
+    <img class="card-img-top" src="{{asset('uploads')}}/{{$value->image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{$value->title}}</h5>
     </div>
     @endif
      @endforeach
-     <br>
-  
-
-     <div class="meeting-single-item">
-                <div class="thumb">
-                  
-                @foreach($post as $value)
-                    @if($value->section_title=='course-3')       
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-         
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-               
-                </div>    
-      </div>
-    </div>
-    </div>
-    @endif
-     @endforeach
-
-     
-
-     
-
-    <!-- <div class="footer">
-    <p>Marjon Doping. Project Developer. WST-3B</p>
-    </div> -->
-  </section>
-
-  <section class="meetings-page" id="meetings">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-12">
-        
-<br>
-    <div class="meeting-single-item">
-                <div class="thumb">
-                  
-                @foreach($post as $value)
+  </div>
+  <div class="card">
+  @foreach($post as $value)
                     @if($value->section_title=='course-3.1')       
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-               
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-               
-                </div>    
-      </div>
+    <img class="card-img-top" src="{{asset('uploads')}}/{{$value->image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title text-center"> {{$value->description}}</h5>
     </div>
-    </div>
-    @endif
+  </div>
+  @endif
      @endforeach
-    <br>
-   
-    
-    @foreach($post as $value)
-     @if($value->section_title=='course-3.2')  
-    <div class="meeting-single-item">
-                <div class="thumb"> 
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>               
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-                 
-                 
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-                </div>    
+</div>
+  </section>
+
+  <footer class="bg-dark text-light p-5" >
+
+<div class="footer-top">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-3 col-md-12 footer-info">
+      <img src=" {{asset('homes/images/cletoslogo.png')}}" alt="" height="150px" width="5px">
       </div>
+
+      <div class="col-lg-3 col-6 footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('home') }}">Home</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('about') }}">About us</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('company') }}">News</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('teams') }}">Teams</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('courses') }}">Products</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('contact') }}">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-6 footer-links">
+        <h4>Our Services</h4>
+        <ul>
+          <li><i class="bi bi-chevron-right"></i> <a >Content Management</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a >Inventory Management</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a >Product Sales</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a >Marketing</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a >Web Design</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start text-light" style="color:white;">
+        <h4>Contact Us</h4>
+        <a>
+          Urdaneta City <br>
+          Pangasinan 2440<br>
+          Philippines<br><br>
+          <strong>Phone:</strong> +1 5589 55488 55<br>
+          <strong>Email:</strong> info@example.com<br>
+</a>
+
+      </div>
+
     </div>
-    </div>
-    @endif
-     @endforeach
-     <br>
+  </div>
+</div>
+
+<div class="container text-center pt-4">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Capstone</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+    Designed by Ryan Julian</a>
+  </div>
+</div>
+</footer>
   
-
-     <div class="meeting-single-item">
-                <div class="thumb">
-                  
-                @foreach($post as $value)
-                    @if($value->section_title=='course-4')       
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-              
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-               
-                </div>    
-      </div>
+  <!-- <section class="p-5 meetings-page">
+  <div class="card-group">
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
-    @endif
-     @endforeach
-
-     
-
-     
-
-    <!-- <div class="footer">
-    <p>Marjon Doping. Project Developer. WST-3B</p>
-    </div> -->
-  </section>
-
-  <section class="meetings-page" id="meetings">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-12">
-        
-
-    <div class="meeting-single-item">
-                <div class="thumb">
-                  
-                @foreach($post as $value)
-                    @if($value->section_title=='course-5')       
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-             
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-               
-                </div>    
-      </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
-    </div>
-    @endif
-     @endforeach
-    <br>
-   
-    
-    @foreach($post as $value)
-     @if($value->section_title=='course-6')  
-    <div class="meeting-single-item">
-                <div class="thumb"> 
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>               
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-                 
-                 
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-                </div>    
-      </div>
-    </div>
-    </div>
-    @endif
-     @endforeach
-     <br>
- 
-     <div class="meeting-single-item">
-                <div class="thumb">
-                  
-                @foreach($post as $value)
-                    @if($value->section_title=='course-7')       
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-                 
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-               
-                </div>    
-      </div>
-    </div>
-    </div>
-    @endif
-     @endforeach
-    <!-- <div class="footer">
-    <p>Marjon Doping. Project Developer. WST-3B</p>
-    </div> -->
-  </section>
-
-  <section class="meetings-page" id="meetings">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-12">
-        
-<br>
-    <div class="meeting-single-item">
-                <div class="thumb">
-                  
-                @foreach($post as $value)
-                    @if($value->section_title=='course-8')       
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-              
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-               
-                </div>    
-      </div>
-    </div>
-    </div>
-    @endif
-     @endforeach
-    <br>
- 
-    
-    @foreach($post as $value)
-     @if($value->section_title=='course-9')  
-    <div class="meeting-single-item">
-                <div class="thumb"> 
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>               
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-                 
-                
-                 <br>
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-                </div>    
-      </div>
-    </div>
-    </div>
-    @endif
-     @endforeach
-     <br>
-   
-
-     <div class="meeting-single-item">
-                <div class="thumb">
-                  
-                @foreach($post as $value)
-                    @if($value->section_title=='course-10')       
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-                 
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-               
-                </div>    
-      </div>
-    </div>
-    </div>
-    @endif
-     @endforeach
-    <!-- <div class="footer">
-    <p>Marjon Doping. Project Developer. WST-3B</p>
-    </div> -->
-  </section>
-
-  <section class="meetings-page" id="meetings">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-12">
-        
-<br>
-    <div class="meeting-single-item">
-                <div class="thumb">
-                  
-                @foreach($post as $value)
-                    @if($value->section_title=='course-11')       
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-                
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-               
-                </div>    
-      </div>
-    </div>
-    </div>
-    @endif
-     @endforeach
-    <br>
-
-    
-    @foreach($post as $value)
-     @if($value->section_title=='course-12')  
-    <div class="meeting-single-item">
-                <div class="thumb"> 
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>               
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-               
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-                </div>    
-      </div>
-    </div>
-    </div>
-    @endif
-     @endforeach
-
-    <br>
-
-     <div class="meeting-single-item">
-                <div class="thumb">
-                  
-                @foreach($post as $value)
-                    @if($value->section_title=='course-13')       
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-                 
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-               
-                </div>    
-      </div>
-    </div>
-    </div>
-    @endif
-     @endforeach
-    <!-- <div class="footer">
-    <p>Marjon Doping. Project Developer. WST-3B</p>
-    </div> -->
-  </section>
- 
-  
-  <section class="meetings-page" id="meetings">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-12">
-        
-
-    <div class="meeting-single-item">
-                <div class="thumb">
-                  
-                @foreach($post as $value)
-                    @if($value->section_title=='course-14')       
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-                 <br>
-                 <br>
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-               
-                </div>    
-      </div>
-    </div>
-    </div>
-    @endif
-     @endforeach
-    <br>
- 
-    
-    @foreach($post as $value)
-     @if($value->section_title=='course-15')  
-    <div class="meeting-single-item">
-                <div class="thumb"> 
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>               
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-                 
-                 
-                
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-                </div>    
-      </div>
-    </div>
-    </div>
-    @endif
-     @endforeach
-     <br>
-  
-
-     <div class="meeting-single-item">
-                <div class="thumb">
-                  
-                @foreach($post as $value)
-                    @if($value->section_title=='course-16')       
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-                 
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-               
-                </div>    
-      </div>
-    </div>
-    </div>
-    @endif
-     @endforeach
-    <!-- <div class="footer">
-    <p>Marjon Doping. Project Developer. WST-3B</p>
-    </div> -->
-  </section>
-
-
- 
-  <section class="meetings-page" id="meetings">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-12">
-        
-
-    <div class="meeting-single-item">
-                <div class="thumb">
-                  
-                @foreach($post as $value)
-                    @if($value->section_title=='course-17')       
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-                 <br>
-                 <br>
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-               
-                </div>    
-      </div>
-    </div>
-    </div>
-    @endif
-     @endforeach
-    
-    
-    @foreach($post as $value)
-     @if($value->section_title=='course-18')  
-    <div class="meeting-single-item">
-                <div class="thumb"> 
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>               
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-                 
-           
-               
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-                </div>    
-      </div>
-    </div>
-    </div>
-    @endif
-     @endforeach
-    
-
-
-     <div class="meeting-single-item">
-                <div class="thumb">
-                  
-                @foreach($post as $value)
-                    @if($value->section_title=='course-19')       
-                <div class="down-content text-center">
-                  <a href="meeting-details.html"><h4>{{$value->title}}</h4></a>
-                  <p class="text-center">
-                  {{$value->description}}
-                  </p>
-                
-                  <a href="meeting-details.html" class="img_detail"><img src="{{asset('uploads')}}/{{$value->image}}" alt=""></a>
-                </div>
-               
-                </div>    
-      </div>
-    </div>
-    </div>
-    @endif
-     @endforeach
-    <div class="footer">
-    <p>Project Developer</p>
-    </div>
-  </section>
-  
-
+  </div>
+</div>
+  </section> -->
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->

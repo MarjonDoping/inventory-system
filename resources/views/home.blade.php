@@ -39,9 +39,9 @@
                     <div class="right-icons">
                         <ul>
                             <li><a href="https://www.facebook.com/profile.php?id=100071402461224" target="_blank"><i
-                                        class="fa fa-facebook"></i></a></li>
+                                        class="fa fa-facebook text-primary"></i></a></li>
                             <li><a href="https://www.facebook.com/profile.php?id=100071402461224" target="_blank"><i
-                                        class="fa fa-google"></i></a></li>
+                                        class="fa fa-google text-danger"></i></a></li>
 
                         </ul>
                     </div>
@@ -190,13 +190,13 @@
     <section class="upcoming-meetings" id="meetings">
         <div class="container">
 
-            <div class="row">
+        <!-- <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading">
                         <h2>Cletos Bakery shop offers</h2>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-12">
                     <div class="categories">
                         <h4>Latest Offers</h4>
                         <ul>
@@ -252,9 +252,9 @@
                             <a href="{{ asset('company') }}">View News and Updates</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <div class="row">
                         @if ($post)
                             @foreach ($post as $value)
@@ -630,22 +630,23 @@
       <div class="col-lg-3 col-6 footer-links">
         <h4>Useful Links</h4>
         <ul>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('home') }}">Home</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('about') }}">About us</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('company') }}">News</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('teams') }}">Teams</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('courses') }}">Products</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('contact') }}">Contact Us</a></li>
         </ul>
       </div>
 
       <div class="col-lg-3 col-6 footer-links">
         <h4>Our Services</h4>
         <ul>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a >Content Management</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a >Inventory Management</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a >Product Sales</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a >Marketing</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a >Web Design</a></li>
         </ul>
       </div>
 
