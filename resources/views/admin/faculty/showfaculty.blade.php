@@ -1,4 +1,5 @@
 @extends('admin.layout')
+@section('title', 'Content Management System')
 @section('content')
     <script>
         $(function() {

@@ -9,8 +9,6 @@
         });
     </script>
 
-    
-
     <main>
         @if (session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -26,36 +24,39 @@
         @endif
         <div class="head-title">
             <div class="left">
-                <h1>Categories Page</h1>
+                <h1>Sales Page</h1>
             </div>
-
+            <div class="right">
+                <select class="form-select" name="op" id="op">
+                    <option value="0">Daily</option>
+                    <option value="1">Weekly</option>
+                    <option value="2">Monthly</option>
+                    <option value="3">Annually</option>
+                </select>
+            </div>
         </div>
 
         <div class="order">
             <div class="mb-3">
-                <div class="text-right">
-                    <a href="{{ route('category-add') }}" class="btn btn-primary text-right"><i class="fa fa-plus"
-                            aria-hidden="true"></i> Add New</a>
-                </div>
                 <br>
 
                 <table id='myTable' class='display' style='width:100%'>
                     <thead>
                         <!-- <th>page</th> -->
-                        <th>Category Name</th>
-                        <th>Action</th>
+                        <th>ID</th>
+                        <th>Customer Name</th>
+                        <th>Total Price</th>
+                        <th>Date</th>
                     </thead>
                     <tbody>
-                        @foreach ($categories as $category)
+                        @foreach ($transactions as $transaction)
                             <tr>
-                                <td>{{ $category->cat_name }}</td>
+                                <td>{{ $transaction->transaction_id }}</td>
+                                <td>{{ $transaction->customer_name }}</td>
+                                <td>{{ $transaction->totalprice }}</td>
+                                <td>{{ $transaction->date }}</td>
 
-                                <td>
-                                    <a href="{{ route('category-edit') }}/{{ $category->cat_id }}"
-                                        class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                                    <a class="btn btn-danger btn-xs deletepost" id="{{ $category->cat_id }}"><i
-                                            class="fa fa-trash"></i></a>
-                                </td>
+                               
                             </tr>
                         @endforeach
 
@@ -69,19 +70,19 @@
         $(document).ready(function() {
             $(document).on("click", ".deletepost", function() {
                 var id = $(this).attr('id');
-                if (confirm('Are you sure you want to remove this Category and all of its contents?')) {
+                if (confirm('Are you sure you want to remove this Ingredient and all of its contents?')) {
                     $.ajax({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
-                        url: '{{ route('category-delete') }}',
+                        url: "{{ route('ingredients-delete') }}",
                         data: {
-                            "cat_id": id,
+                            "ingredient_id": id,
                         },
                         type: "post",
                         success: function(data) {
                             if (data == true) {
-                                alert("Category deleted successfully..!!");
+                                alert("Ingredient deleted successfully..!!");
                             } else {
                                 alert(data);
                             }

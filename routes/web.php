@@ -12,9 +12,13 @@ use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\siteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ExpensesController;
+use App\Http\Controllers\IngredientsController;
+use App\Http\Controllers\InventoryLogController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\pdfController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,6 +91,22 @@ Route::get('/page-add', [Pagecontroller::class,'AddPage'])->name('page-add');
 	Route::get('/category-edit/{cat_id?}', [CategoryController::class,'edit'])->name('category-edit');
 	Route::post('/category-edit/{cat_id?}', [CategoryController::class,'create'])->name('category-save');
 	Route::post('/category-delete', [CategoryController::class,'delete'])->name('category-delete');
+
+
+	Route::get('/ingredients', [IngredientsController::class, 'show'])->name('ingredients-show');
+	Route::get('/ingredients-add/', [IngredientsController::class, 'add'])->name('ingredients-add');
+	Route::post('/ingredients-add/{ingredient_id?}', [IngredientsController::class,'create'])->name('ingredients-create');
+	Route::get('/ingredients-edit/{ingredient_id?}', [IngredientsController::class,'edit'])->name('ingredients-edit');
+	Route::post('/ingredients-edit/{ingredient_id?}', [IngredientsController::class,'create'])->name('ingredients-save');
+	Route::post('/ingredients-delete', [IngredientsController::class,'delete'])->name('ingredients-delete');
+
+	Route::get('/inventory-log', [InventoryLogController::class, 'show'])->name('inventory-log-show');
+
+
+	Route::get('/sales', [TransactionController::class, 'show'])->name('sales-show');
+	Route::get('/expenses', [ExpensesController::class, 'show'])->name('expenses-show');
+
+
 
 	Route::get('/products', [ProductController::class,'show'])->name('products-show');
 	Route::get('/products-add/', [ProductController::class,'add'])->name('products-add');

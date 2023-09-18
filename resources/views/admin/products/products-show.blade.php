@@ -1,4 +1,6 @@
 @extends('admin.layout')
+@section('title', 'Inventory Management System')
+
 @section('content')
     <script>
         $(function() {
@@ -50,7 +52,7 @@
                             <tr>
                                 <td>{{ $product->prod_name }}</td>
                                 <td>{{ $product->cat_name }}</td>
-                                <td>{{ $product->prod_price }}</td>
+                                <td>₱ {{ $product->prod_price }}</td>
                                 <td><img src="uploads/{{ $product->prod_image }}" style="height: 50px;width: 50px;">
                                 </td>
                                 <td>{{ $product->stock }}</td>

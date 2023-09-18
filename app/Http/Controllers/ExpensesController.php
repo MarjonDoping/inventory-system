@@ -2,41 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Expenses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class CategoryController extends Controller
+class ExpensesController extends Controller
 {
     //
-
     public function show()
     {
-        $data['categories'] = Category::paginate(500);
-        $data['page_title'] = 'inventory';
-        return view('admin.category.category-show', $data);
+        $data['expenses'] = Expenses::paginate(500);
+        $data['page_title'] = 'sales';
+        return view('admin.expenses.expenses-show', $data);
     }
 
     public function add(Request $request)
     {
-        $data['category'] = new Category();
+        $data['category'] = new Expenses();
         $data['page_title'] = 'inventory';
 
 		if($request->cat_id){
 			$id = $request->cat_id;
-			$data['category'] = Category::where('cat_id',$id)->first();
+			$data['category'] = Expenses::where('cat_id',$id)->first();
 		}
         return view('admin.category.category-add', $data);
     }
 
     public function edit(Request $request)
     {
-        $data['category'] = new Category();
+        $data['category'] = new Expenses();
         $data['page_title'] = 'inventory';
 
 		if($request->cat_id){
 			$id = $request->cat_id;
-			$data['category'] = Category::where('cat_id',$id)->first();
+			$data['category'] = Expenses::where('cat_id',$id)->first();
 		}
         return view('admin.category.category-edit', $data);
     }
@@ -60,7 +59,7 @@ class CategoryController extends Controller
                 'cat_name'  => $request->cat_name,
             );
 
-            $post = Category::updateOrCreate(['cat_id' => $id], $data);
+            $post = Expenses::updateOrCreate(['cat_id' => $id], $data);
 
             if ($post) {
                 $message = '';
@@ -85,7 +84,7 @@ class CategoryController extends Controller
         $id  = $request->cat_id;
 
         if ($id) {
-            $res = Category::find($id)->delete();
+            $res = Expenses::find($id)->delete();
             if ($res) {
                 echo json_encode('Deleted successfully');
             } else {

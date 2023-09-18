@@ -1,5 +1,5 @@
 @extends('admin.layout')
-@section('title', 'Inventory Management System')
+@section('title', 'Sales Report')
 
 @section('content')
     <script>
@@ -8,8 +8,6 @@
             $(".alert").alert();
         });
     </script>
-
-    
 
     <main>
         @if (session()->has('success'))
@@ -26,7 +24,7 @@
         @endif
         <div class="head-title">
             <div class="left">
-                <h1>Categories Page</h1>
+                <h1>Expenses Page</h1>
             </div>
 
         </div>
@@ -34,7 +32,7 @@
         <div class="order">
             <div class="mb-3">
                 <div class="text-right">
-                    <a href="{{ route('category-add') }}" class="btn btn-primary text-right"><i class="fa fa-plus"
+                    <a href="#" class="btn btn-primary text-right"><i class="fa fa-plus"
                             aria-hidden="true"></i> Add New</a>
                 </div>
                 <br>
@@ -42,20 +40,25 @@
                 <table id='myTable' class='display' style='width:100%'>
                     <thead>
                         <!-- <th>page</th> -->
-                        <th>Category Name</th>
-                        <th>Action</th>
+                        <th>ID</th>
+                        <th>Details</th>
+                        <th>Amount</th>
+                        <th>Date</th>
                     </thead>
                     <tbody>
-                        @foreach ($categories as $category)
+                        @foreach ($expenses as $expense)
                             <tr>
-                                <td>{{ $category->cat_name }}</td>
+                                <td>{{ $expense->expenses_id }}</td>
+                                <td>{{ $expense->details }}</td>
+                                <td>₱ {{ sprintf('%.2f', $expense->amount) }}</td>
+                                <td>{{ $expense->created_at }}</td>
 
-                                <td>
-                                    <a href="{{ route('category-edit') }}/{{ $category->cat_id }}"
+                                {{-- <td>
+                                    <a href="{{ route('ingredients-edit') }}/{{ $ingredient->ingredient_id }}"
                                         class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                                    <a class="btn btn-danger btn-xs deletepost" id="{{ $category->cat_id }}"><i
+                                    <a class="btn btn-danger btn-xs deletepost" id="{{ $ingredient->ingredient_id }}"><i
                                             class="fa fa-trash"></i></a>
-                                </td>
+                                </td> --}}
                             </tr>
                         @endforeach
 
@@ -69,19 +72,19 @@
         $(document).ready(function() {
             $(document).on("click", ".deletepost", function() {
                 var id = $(this).attr('id');
-                if (confirm('Are you sure you want to remove this Category and all of its contents?')) {
+                if (confirm('Are you sure you want to remove this Ingredient and all of its contents?')) {
                     $.ajax({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
-                        url: '{{ route('category-delete') }}',
+                        url: "{{ route('ingredients-delete') }}",
                         data: {
-                            "cat_id": id,
+                            "ingredient_id": id,
                         },
                         type: "post",
                         success: function(data) {
                             if (data == true) {
-                                alert("Category deleted successfully..!!");
+                                alert("Ingredient deleted successfully..!!");
                             } else {
                                 alert(data);
                             }

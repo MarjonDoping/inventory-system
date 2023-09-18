@@ -4,12 +4,12 @@
 @section('content')
     <script>
         $(function() {
-            $('#myTable').DataTable();
+            $('#myTable').DataTable({
+                order: false
+            });
             $(".alert").alert();
         });
     </script>
-
-    
 
     <main>
         @if (session()->has('success'))
@@ -26,36 +26,33 @@
         @endif
         <div class="head-title">
             <div class="left">
-                <h1>Categories Page</h1>
+                <h1>Inventory Log</h1>
             </div>
 
         </div>
 
         <div class="order">
             <div class="mb-3">
-                <div class="text-right">
-                    <a href="{{ route('category-add') }}" class="btn btn-primary text-right"><i class="fa fa-plus"
-                            aria-hidden="true"></i> Add New</a>
-                </div>
+
                 <br>
 
                 <table id='myTable' class='display' style='width:100%'>
                     <thead>
                         <!-- <th>page</th> -->
-                        <th>Category Name</th>
-                        <th>Action</th>
+                        <th>ID</th>
+                        <th>Details</th>
+                        <th class="text-center">In</th>
+                        <th class="text-center">Out</th>
+                        <th>Date</th>
                     </thead>
                     <tbody>
-                        @foreach ($categories as $category)
+                        @foreach ($inventory_log as $log)
                             <tr>
-                                <td>{{ $category->cat_name }}</td>
-
-                                <td>
-                                    <a href="{{ route('category-edit') }}/{{ $category->cat_id }}"
-                                        class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                                    <a class="btn btn-danger btn-xs deletepost" id="{{ $category->cat_id }}"><i
-                                            class="fa fa-trash"></i></a>
-                                </td>
+                                <td>{{ $log->inventorylog_id }}</td>
+                                <td>{{ $log->details }}</td>
+                                <td class="text-center">{{ $log->inventory_in }}</td>
+                                <td class="text-center">{{ $log->inventory_out }}</td>
+                                <td>{{ date_format($log->created_at,"m-d-Y h:i a") }}</td>
                             </tr>
                         @endforeach
 
@@ -74,7 +71,7 @@
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
-                        url: '{{ route('category-delete') }}',
+                        url: "{{ route('ingredients-delete') }}",
                         data: {
                             "cat_id": id,
                         },

@@ -12,7 +12,7 @@ class Contactcontrol extends Controller
 {
 		public function show(){
 			$data['contacts'] = Contact::paginate(500);
-			$data['page_title'] = 'messages';
+			$data['page_title'] = 'content';
 
 			return view('admin.contacts',$data);
 		}

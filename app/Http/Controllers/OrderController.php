@@ -20,7 +20,7 @@ class OrderController extends Controller
         $data['tbl_userorders'] = UserOrder::paginate(500);
         $data['transactions'] = Transaction::paginate(500);
 
-        $data['page_title'] = 'orders';
+        $data['page_title'] = 'inventory';
 
 
         if(!$data['order_id']){
@@ -47,7 +47,7 @@ class OrderController extends Controller
         $data['products'] = $prod;
         $data['order_id'] = $order_id;
 
-        $data['page_title'] = 'orders';
+        $data['page_title'] = 'inventory';
 
         return view('admin.orders.orders-add', $data);
     }
@@ -210,7 +210,7 @@ class OrderController extends Controller
             $data['orders'] = $orders;
             $data['userorders'] = $userorders;
             $data['order_id'] = $order_id;
-            $data['page_title'] = 'orders';
+            $data['page_title'] = 'inventory';
 
 
             return view('admin.orders.orders-checkout', $data);
@@ -268,7 +268,7 @@ class OrderController extends Controller
             $data['orders'] = $orders;
             $data['userorders'] = $userorders;
             $data['order_id'] = $order_id;
-            $data['page_title'] = 'orders';
+            $data['page_title'] = 'inventory';
             $trans = Transaction::where('order_id', $order_id)->first();
             $data['date'] = $trans->date;
             $data['customer_name'] = $trans->customer_name;

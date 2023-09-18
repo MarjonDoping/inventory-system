@@ -1,16 +1,18 @@
 @extends('admin.layout')
+@section('title', 'Content Management System')
+
 @section('content')
     <main>
         <div class="head-title">
             <div class="left">
-                <h1>Add Content</h1>
+                <h1>Edit Bakeshop Owner</h1>
                 <ul class="breadcrumb">
                     <li>
-                        <a href="#">Post</a>
+                        <a href="#">Bakeshop Owner</a>
                     </li>
                     <li><i class='bx bx-chevron-right'></i></li>
                     <li>
-                        <a class="active" href="#">Add</a>
+                        <a class="active" href="#">Edit</a>
                     </li>
                 </ul>
             </div>

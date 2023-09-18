@@ -10,7 +10,7 @@ class Pagecontroller extends Controller
     public function AddPage(Request $request){
         
         $data['page'] = Page::where('page_title','home')->get();
-        $data['page_title'] = 'home';
+        $data['page_title'] = 'content';
 
         $numrow = count($data['page']);
         if($numrow > 0 ){
@@ -24,7 +24,7 @@ class Pagecontroller extends Controller
     public function company(Request $request){
         $data['page'] = Page::where('page_title','our_company')->get();
         $data['total_row'] = count($data['page']);
-        $data['page_title'] = 'about';
+        $data['page_title'] = 'content';
 
         return view('admin.company.ourCompany', $data);
         
@@ -33,7 +33,7 @@ class Pagecontroller extends Controller
 
         $data['page'] = Page::where('page_title','contact')->get();
         $data['total_row'] = count($data['page']);
-        $data['page_title'] = 'contact';
+        $data['page_title'] = 'content';
 
         return view('admin.contact.ContactPost', $data);
         

@@ -16,10 +16,10 @@
         <div class="head-title">
             
             <div class="left">
-                <h1>Add Order</h1>
+                <h1>Add Ingredient</h1>
                 <ul class="breadcrumb">
                     <li>
-                        <a href="{{ route('orders-show') }}">Orders</a>
+                        <a href="{{ route('ingredients-show') }}">Ingredients</a>
                     </li>
                     <li><i class='bx bx-chevron-right'></i></li>
                     <li>
@@ -35,67 +35,66 @@
 
         <div class="order">
             <div class="mb-3">
+
                 <div class="row">
-                    {!! Form::open(['route' => ['orders-add', $order_id], 'enctype' => 'multipart/form-data']) !!}
+                    {!! Form::open(['route' => ['ingredients-create', $ingredients->cat_id], 'enctype' => 'multipart/form-data']) !!}
 
                     <div class="mb-3">
-                        <label class="form-label">Products: </label>
+                        <label class="form-label">Ingredient: </label>
                         @php
-                            $class = "form-select";
-                            if($errors->has('prod_id')){
+                            $class = "form-control";
+
+                            if($errors->any()){
                                 $class = $class . " is-invalid";
                             }
                         @endphp
-                        {{ Form::select('prod_id', $products, '', ['class' => $class]) }}
+                        {{ Form::text('ingredient_name', $ingredients->ingredient_name, ['class' => $class, 'placeholder' => 'To create ingredient type "new"']) }}
 
-                        @error('prod_id')
+                        @error('ingredient_name')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Quantity: </label>
+                        <label class="form-label">Stocks: </label>
                         @php
                             $class = "form-control";
 
-                            if($errors->has('quantity')){
+                            if($errors->any()){
                                 $class = $class . " is-invalid";
                             }
                         @endphp
-                        {{ Form::number('quantity', '1', ['class' => $class, 'placeholder' => '100', 'id' => 'quantity']) }}
+                        {{ Form::number('stocks', $ingredients->stocks, ['class' => $class, 'min'=>"0"]) }}
 
-                        @error('quantity')
-                            <p class="text-danger" id="m-quantity">{{ $message }}</p>
+                        @error('stocks')
+                            <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
 
+                    <div class="mb-3">
+                        <label class="form-label">Amount: </label>
+                        @php
+                            $class = "form-control";
+
+                            if($errors->any()){
+                                $class = $class . " is-invalid";
+                            }
+                        @endphp
+                        {{ Form::number('amount', $ingredients->amount, ['class' => $class, 'min'=>"0", 'step'=>"any"]) }}
+
+                        @error('amount')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                   
                     {{ Form::submit('Add', ['class' => 'btn btn-primary']) }}
                 </div>
             </div>
             {!! Form::close() !!}
-        </div>
 
 
     </main>
-
-    <script>
-        var doc = document;
-
-        doc.getElementById('quantity').addEventListener('click', function(e){
-            e.preventDefault();
-            this.classList.remove('is-invalid');
-        });
-
-        doc.getElementById('quantity').addEventListener('change', function (ev) { 
-            clear(ev, 'm-quantity');
-        });
-
-        function clear(ev, id){
-            ev.preventDefault();
-            doc.getElementById(id).style.display = 'none';
-        }
-
-    </script>
 @endsection
 
 @push('footer-script')
