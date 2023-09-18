@@ -1,4 +1,6 @@
 @extends('admin.layout')
+@section('title', 'Content Management System')
+
 @section('content')
     <script>
         $(function() {
@@ -17,7 +19,7 @@
                     </li>
                     <li><i class='bx bx-chevron-right'></i></li>
                     <li>
-                        <a class="active" href="#">contact</a>
+                        <a class="active" href="#">Bakeshop owners</a>
                     </li>
                 </ul>
             </div>

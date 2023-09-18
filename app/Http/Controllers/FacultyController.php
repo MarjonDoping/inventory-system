@@ -27,7 +27,7 @@ class FacultyController extends Controller
     public function show()
     {
         $data['faculties'] = Faculty::paginate(500);
-        $data['page_title'] = 'devs';
+        $data['page_title'] = 'content';
 
         return view('admin.faculty.showfaculty', $data);
     }

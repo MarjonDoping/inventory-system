@@ -1,4 +1,6 @@
 @extends('admin.layout')
+@section('title', 'Inventory Management System')
+
 @section('content')
 
     <div class="left">

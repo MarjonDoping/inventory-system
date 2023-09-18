@@ -1,4 +1,7 @@
 @extends('admin.layout')
+@section('title', 'Inventory Management System')
+
+
 @section('content')
     <script>
         $(function() {

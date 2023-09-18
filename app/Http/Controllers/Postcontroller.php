@@ -25,7 +25,7 @@ class Postcontroller extends Controller
     public function show()
     {
         $data['posts'] = Post::paginate(500);
-        $data['page_title'] = 'post';
+        $data['page_title'] = 'content';
         return view('admin.post.showpost', $data);
     }
 

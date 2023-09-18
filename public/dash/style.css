@@ -103,7 +103,7 @@ body {
 }
 #sidebar .side-menu {
 	width: 100%;
-	margin-top: 10px;
+	margin-top: 30px;
 }
 #sidebar .side-menu li {
 	height: 48px;
@@ -154,7 +154,7 @@ body {
 	color: var(--blue);
 }
 #sidebar.hide .side-menu li a {
-	width: calc(48px - (4px * 2));
+	width: calc(55px - (4px * 2));
 	transition: width .3s ease;
 }
 #sidebar .side-menu li a.logout {
@@ -164,7 +164,7 @@ body {
 	color: var(--blue);
 }
 #sidebar .side-menu li a .bx {
-	min-width: calc(60px  - ((4px + 6px) * 2));
+	min-width: calc(65px  - ((4px + 6px) * 2));
 	display: flex;
 	justify-content: center;
 }

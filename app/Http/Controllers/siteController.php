@@ -12,7 +12,7 @@ class siteController extends Controller
 {
     public function create(Request $request){
 		$data['site'] = new Site();
-        $data['page_title'] = 'owners';
+        $data['page_title'] = 'content';
 
 		if($request->post_id){
 			$id = $request->post_id;
@@ -24,7 +24,7 @@ class siteController extends Controller
 
 	public function show(){
 		$data['sites'] = Site::paginate(500);
-        $data['page_title'] = 'owners';
+        $data['page_title'] = 'content';
 		return view('admin.site.showsite', $data);
 	}
 

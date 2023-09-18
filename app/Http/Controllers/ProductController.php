@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function show()
     {
         $data['products'] = Product::join('categories', 'categories.cat_id', '=', 'products.cat_id')->get();
-        $data['page_title'] = 'products';
+        $data['page_title'] = 'inventory';
         return view('admin.products.products-show', $data);
     }
 
@@ -27,7 +27,7 @@ class ProductController extends Controller
         }
         $data['categories'] = $cat;
 
-        $data['page_title'] = 'products';
+        $data['page_title'] = 'inventory';
 
         if ($request->prod_id) {
             $id = $request->prod_id;
@@ -39,7 +39,7 @@ class ProductController extends Controller
     public function edit(Request $request)
     {
         $data['products'] = new Product();
-        $data['page_title'] = 'products';
+        $data['page_title'] = 'inventory';
 
         $categories = Category::all();
         foreach ($categories as $category) {
