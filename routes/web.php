@@ -104,8 +104,11 @@ Route::get('/page-add', [Pagecontroller::class,'AddPage'])->name('page-add');
 
 
 	Route::get('/sales', [TransactionController::class, 'show'])->name('sales-show');
-	Route::get('/expenses', [ExpensesController::class, 'show'])->name('expenses-show');
+	Route::get('/sales-get/{year?}/{month?}/{day?}', [TransactionController::class, 'get'])->name('sales-get');
 
+	Route::get('/expenses', [ExpensesController::class, 'show'])->name('expenses-show');
+	Route::get('/expenses-add/', [ExpensesController::class, 'add'])->name('expenses-add');
+	Route::post('/expenses-add/{expenses_id?}', [ExpensesController::class,'create'])->name('expenses-create');
 
 
 	Route::get('/products', [ProductController::class,'show'])->name('products-show');

@@ -4,7 +4,9 @@
 @section('content')
     <script>
         $(function() {
-            $('#myTable').DataTable();
+            $('#myTable').DataTable({
+                ordering: false
+            });
             $(".alert").alert();
         });
     </script>
@@ -32,7 +34,7 @@
         <div class="order">
             <div class="mb-3">
                 <div class="text-right">
-                    <a href="#" class="btn btn-primary text-right"><i class="fa fa-plus"
+                    <a href="{{ route('expenses-add') }}" class="btn btn-primary text-right"><i class="fa fa-plus"
                             aria-hidden="true"></i> Add New</a>
                 </div>
                 <br>

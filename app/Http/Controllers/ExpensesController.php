@@ -11,21 +11,21 @@ class ExpensesController extends Controller
     //
     public function show()
     {
-        $data['expenses'] = Expenses::paginate(500);
+        $data['expenses'] = Expenses::orderBy('expenses_id', 'desc')->paginate(500);
         $data['page_title'] = 'sales';
         return view('admin.expenses.expenses-show', $data);
     }
 
     public function add(Request $request)
     {
-        $data['category'] = new Expenses();
+        $data['expenses'] = new Expenses();
         $data['page_title'] = 'inventory';
 
-		if($request->cat_id){
-			$id = $request->cat_id;
-			$data['category'] = Expenses::where('cat_id',$id)->first();
+		if($request->expenses_id){
+			$id = $request->expenses_id;
+			$data['expenses'] = Expenses::where('expenses_id',$id)->first();
 		}
-        return view('admin.category.category-add', $data);
+        return view('admin.expenses.expenses-add', $data);
     }
 
     public function edit(Request $request)
@@ -44,24 +44,26 @@ class ExpensesController extends Controller
     {
 
         $id = '';
-        if ($request->cat_id) {
-            $id = $request->cat_id;
+        if ($request->expenses_id) {
+            $id = $request->expenses_id;
         }
 
         $validator = Validator::make($request->all(), [
-            'cat_name'  => 'required',
+            'details'  => 'required',
+            'amount'  => 'required',
         ]);
 
         if ($validator->fails()) {
             return  back()->withErrors($validator)->withInput();
         } else {
             $data = array(
-                'cat_name'  => $request->cat_name,
+                'details'  => $request->details,
+                'amount'  => $request->amount
             );
 
-            $post = Expenses::updateOrCreate(['cat_id' => $id], $data);
+            $expenses = Expenses::updateOrCreate(['expenses_id' => $id], $data);
 
-            if ($post) {
+            if ($expenses) {
                 $message = '';
 
                 if ($id)
@@ -69,10 +71,10 @@ class ExpensesController extends Controller
                 else
                     $message = "Inserted";
 
-                return redirect()->route('category-show')->with(['success' => $message . ' Successfully!']);
+                return redirect()->route('expenses-show')->with(['success' => $message . ' Successfully!']);
 
             } else {
-                return redirect()->route('category-show')->with(['error' => 'Failed to insert category. Please try again.']);
+                return redirect()->route('expenses-show')->with(['error' => 'Failed to insert expenses. Please try again.']);
             }
         }
     }

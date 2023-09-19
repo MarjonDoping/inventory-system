@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2023 at 05:01 PM
+-- Generation Time: Sep 19, 2023 at 08:00 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -134,7 +134,8 @@ INSERT INTO `expenses` (`expenses_id`, `details`, `amount`, `created_at`, `updat
 (4, 'cornstarch', 250.00, '2023-09-18 05:23:03', '2023-09-18 05:23:03'),
 (5, 'Cooking oil', 150.00, '2023-09-18 05:44:25', '2023-09-18 05:44:25'),
 (6, 'Cooking oil', 150.00, '2023-09-18 05:49:49', '2023-09-18 05:49:49'),
-(7, 'asd', 11.00, '2023-09-18 06:20:04', '2023-09-18 06:20:04');
+(7, 'asd', 11.00, '2023-09-18 06:20:04', '2023-09-18 06:20:04'),
+(8, 'Electric Bill', 450.00, '2023-09-19 09:59:31', '2023-09-19 09:59:31');
 
 -- --------------------------------------------------------
 
@@ -199,9 +200,9 @@ CREATE TABLE `ingredients` (
 INSERT INTO `ingredients` (`ingredient_id`, `ingredient_name`, `stocks`, `created_at`, `updated_at`) VALUES
 (1, 'sack of flour', 5, '2023-09-14 15:07:15', '2023-09-14 15:07:15'),
 (2, 'sugar', 5, '2023-09-15 05:49:47', '2023-09-15 05:49:47'),
-(3, 'Cooking oil', 6, '2023-09-15 05:52:58', '2023-09-18 06:08:18'),
+(3, 'Cooking oil', 10, '2023-09-15 05:52:58', '2023-09-19 05:29:14'),
 (4, 'egg', 12, '2023-09-15 06:19:13', '2023-09-15 06:19:13'),
-(5, 'cornstarch', 5, '2023-09-18 05:23:03', '2023-09-18 05:23:03');
+(5, 'cornstarch', 5, '2023-09-18 05:23:03', '2023-09-19 05:31:18');
 
 -- --------------------------------------------------------
 
@@ -233,7 +234,11 @@ INSERT INTO `inventory_logs` (`inventorylog_id`, `details`, `inventory_in`, `inv
 (7, 'Cooking oil', 6, NULL, 1, '2023-09-18 06:07:24', '2023-09-18 06:07:24'),
 (8, 'Cooking oil', NULL, 2, 1, '2023-09-18 06:08:06', '2023-09-18 06:08:06'),
 (9, 'Cooking oil', 2, NULL, 1, '2023-09-18 06:08:18', '2023-09-18 06:08:18'),
-(10, 'asd', 11, NULL, 1, '2023-09-18 06:20:04', '2023-09-18 06:20:04');
+(10, 'asd', 11, NULL, 1, '2023-09-18 06:20:04', '2023-09-18 06:20:04'),
+(11, 'Cooking oil', NULL, 2, 1, '2023-09-19 05:28:55', '2023-09-19 05:28:55'),
+(12, 'Cooking oil', 6, NULL, 1, '2023-09-19 05:29:13', '2023-09-19 05:29:13'),
+(13, 'cornstarch', NULL, 5, 1, '2023-09-19 05:30:19', '2023-09-19 05:30:19'),
+(14, 'cornstarch', 5, NULL, 1, '2023-09-19 05:31:18', '2023-09-19 05:31:18');
 
 -- --------------------------------------------------------
 
@@ -720,7 +725,7 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `expenses`
 --
 ALTER TABLE `expenses`
-  MODIFY `expenses_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `expenses_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `faculties`
@@ -744,7 +749,7 @@ ALTER TABLE `ingredients`
 -- AUTO_INCREMENT for table `inventory_logs`
 --
 ALTER TABLE `inventory_logs`
-  MODIFY `inventorylog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `inventorylog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `messages`
