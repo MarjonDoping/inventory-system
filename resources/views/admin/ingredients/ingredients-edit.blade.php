@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Stocks: </label>
+                        <label class="form-label">Stocks: ({{ $ingredients->stocks }})</label>
                         @php
                             $class = "form-control";
 

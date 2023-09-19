@@ -16,10 +16,10 @@
         <div class="head-title">
             
             <div class="left">
-                <h1>Add Ingredient</h1>
+                <h1>Add Expenses</h1>
                 <ul class="breadcrumb">
                     <li>
-                        <a href="{{ route('ingredients-show') }}">Ingredients</a>
+                        <a href="{{ route('expenses-show') }}">Expenses</a>
                     </li>
                     <li><i class='bx bx-chevron-right'></i></li>
                     <li>
@@ -30,17 +30,14 @@
 
         </div>
 
-
-
-
         <div class="order">
             <div class="mb-3">
 
                 <div class="row">
-                    {!! Form::open(['route' => ['ingredients-create', $ingredients->cat_id], 'enctype' => 'multipart/form-data']) !!}
+                    {!! Form::open(['route' => ['expenses-create', $expenses->expenses_id], 'enctype' => 'multipart/form-data']) !!}
 
                     <div class="mb-3">
-                        <label class="form-label">Ingredient: </label>
+                        <label class="form-label">Details: </label>
                         @php
                             $class = "form-control";
 
@@ -48,25 +45,9 @@
                                 $class = $class . " is-invalid";
                             }
                         @endphp
-                        {{ Form::text('ingredient_name', $ingredients->ingredient_name, ['class' => $class, 'placeholder' => 'To create ingredient type "new"']) }}
+                        {{ Form::text('details', $expenses->details, ['class' => $class, 'placeholder' => 'To create details type "new"']) }}
 
-                        @error('ingredient_name')
-                            <p class="text-danger">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Stocks: </label>
-                        @php
-                            $class = "form-control";
-
-                            if($errors->any()){
-                                $class = $class . " is-invalid";
-                            }
-                        @endphp
-                        {{ Form::number('stocks', $ingredients->stocks, ['class' => $class, 'min'=>"0"]) }}
-
-                        @error('stocks')
+                        @error('details')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
@@ -80,13 +61,12 @@
                                 $class = $class . " is-invalid";
                             }
                         @endphp
-                        {{ Form::number('amount', $ingredients->amount, ['class' => $class, 'min'=>"0", 'step'=>"any"]) }}
+                        {{ Form::number('amount', $expenses->amount, ['class' => $class, 'min'=>"0"]) }}
 
                         @error('amount')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
-
                    
                     {{ Form::submit('Add', ['class' => 'btn btn-primary']) }}
                 </div>
