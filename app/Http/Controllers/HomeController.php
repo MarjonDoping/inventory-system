@@ -22,9 +22,11 @@ class HomeController extends Controller
 
   public function details()
   {
-    $company = Page::where('page_title', 'our_company')->get();
-    $post = Post::where('page_title', 'home')->get();
-    return view('details', ['company' => $company, 'post' => $post]);
+    $data['page_title'] = "news";
+    $data['company'] = Page::where('page_title', 'our_company')->get();
+    $data['post'] = Post::where('page_title', 'home')->get();
+
+    return view('details', $data);
   }
 
   public function details1()
@@ -64,21 +66,27 @@ class HomeController extends Controller
 
   public function teams()
   {
-    $company = Page::where('page_title', 'our_company')->get();
-    $post = Site::where('page_title', 'site')->get();
-    return view('teams', ['company' => $company, 'post' => $post]);
+    $data['page_title'] = "teams";
+    $data['company'] = Page::where('page_title', 'our_company')->get();
+    $data['post'] = Site::where('page_title', 'site')->get();
+
+    return view('teams', $data);
   }
   public function board()
   {
-    $company = Page::where('page_title', 'our_company')->get();
-    $post = Faculty::where('page_title', 'faculty')->get();
-    return view('board', ['company' => $company, 'post' => $post]);
+    $data['page_title'] = "teams";
+    $data['company'] = Page::where('page_title', 'our_company')->get();
+    $data['post'] = Faculty::where('page_title', 'faculty')->get();
+
+    return view('board', $data);
   }
   public function courses()
   {
-    $company = Page::where('page_title', 'our_company')->get();
-    $post = Post::where('page_title', 'home')->get();
-    return view('courses', ['company' => $company, 'post' => $post]);
+    $data['page_title'] = "products";
+    $data['company'] = Page::where('page_title', 'our_company')->get();
+    $data['post'] = Post::where('page_title', 'home')->get();
+
+    return view('courses', $data);
   }
 
   public function faculty()

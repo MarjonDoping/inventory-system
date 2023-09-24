@@ -209,7 +209,7 @@ a {
             </div>
             <div class="col-lg-6">
                 <div class="card2 card border-0 pt-3 py-5">
-                   <center><img src="{{asset('homes/images/cletos.png')}}" alt="" width="130" height="100" class="text-center"></center>
+                   <center><img src="{{asset('homes/images/cletos-newlogo.png')}}" alt="" width="130" height="100" class="text-center"></center>
                         <!-- <h3 class="mb-0 mr-4 mt-2 text-center">Log In</h3> -->
                         
                   

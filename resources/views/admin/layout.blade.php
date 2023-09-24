@@ -30,9 +30,9 @@
     <!-- SIDEBAR -->
     <section id="sidebar" style="overflow-y: hidden">
         <a href="{{ route('dashboard') }}" class="brand">
-            <img src=" {{ asset('homes/images/cletos.png') }}" alt="" class="logos">
+            <img src=" {{ asset('homes/images/cletos-newlogo.png') }}" alt="" class="logos pt-4 d-none d-lg-block">
         </a>
-        <ul class="side-menu top">
+        <div class="side-menu top">
             <li @if ($page_title == 'dashboard') class="active" @endif>
                 <a class="ps-2" href="{{ route('dashboard') }}">
                     <i class='bx bxs-dashboard'></i>
@@ -226,15 +226,15 @@
                     <span class="text">Orders</span>
                 </a>
             </li> --}}
-        </ul>
-        <ul class="side-menu">
+        </div>
+        <div class="side-menu">
             <li>
                 <a href="/logout" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
                     <span class="text">Admin Logout</span>
                 </a>
             </li>
-        </ul>
+        </div>
     </section>
     <section id="content">
         <!-- NAVBAR -->

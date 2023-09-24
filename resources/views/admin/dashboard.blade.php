@@ -124,9 +124,9 @@
     </script>
 
     <main>
-        <div class=" text-center">
+        <div>
             <div class="center">
-                <h1>Hello Admin Welcome<br> to Dashboard</h1>
+                <h1>Dashboard</h1>
                 <ul class="breadcrumb">
                     <li>
                         <a href="#">Dashboard</a>

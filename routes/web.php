@@ -31,16 +31,16 @@ use App\Http\Controllers\TransactionController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Basecontroller::class,'home'])->name('home');
 
 Route::get('/a', function (){
 	echo "hello world";
 });
 
 Route::get('/home', [Basecontroller::class,'home']);
-Route::get('/company', [Basecontroller::class,'company']);
+Route::get('/company', [Basecontroller::class,'company'])->name('announcement.show');
+Route::post('/company', [Basecontroller::class,'feedback'])->name('announcement.feedback');
+
 Route::get('/service', [Basecontroller::class,'services']);
 Route::get('/contact', [Basecontroller::class,'contact']);
 Route::get('/about', [Basecontroller::class,'about']);
